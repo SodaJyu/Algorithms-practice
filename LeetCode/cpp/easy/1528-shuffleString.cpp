@@ -16,3 +16,18 @@ public:
         return str;
     }
 };
+
+class Solution {
+public:
+    string restoreString(string s, vector<int>& indices) {
+        int length = indices.size();
+        if (s.size() != length) return s;
+        vector<char> result(length);
+
+        for (int i = 0; i < length; i++) {
+            result[indices[i]] = s[i];
+        }
+        string str(result.begin(), result.end());
+        return str;
+    }
+};
